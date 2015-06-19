@@ -5,7 +5,6 @@ var Commodities = require('./commodities'),
 var commodities = new Commodities();
 
 class Deal {
-  //  constructor(buyer, seller, listing, cargo, cash) {
   constructor(options) {
 
     let {

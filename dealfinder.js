@@ -16,8 +16,8 @@ let system,
 
 if (args.id)
   system = systems.findById(Number(args.id));
-else if (args.name)
-  system = systems.findByName(args.name);
+else if (args.system)
+  system = systems.findByName(args.system);
 else
   throw new Error('You need to specify a system --name or an --id');
 
@@ -71,7 +71,7 @@ let profitable = (deal) => {
 }
 
 let stationFilter = (station) => {
-  return station.listings.length && station.distance_to_star < 1000;
+  return station.listings.length && station.distance_to_star < 1000 && station.max_landing_pad_size === 'L';
 }
 
 let deals = findDeals(system, ly)
